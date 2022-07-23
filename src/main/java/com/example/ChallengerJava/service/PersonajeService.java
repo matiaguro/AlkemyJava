@@ -13,11 +13,13 @@ import java.util.List;
 public class PersonajeService   {
 
     public PersonajeService(PersonajeRepository personajeRepository) {
+
         this.personajeRepository = personajeRepository;
     }
     private PersonajeRepository personajeRepository;
 
     public List<PersonajeEntity> obtenerPersonajes (){
+
         return personajeRepository.findAll();
     }
 
