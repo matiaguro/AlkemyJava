@@ -24,6 +24,15 @@ public class GeneroController {
 
         return generoService.guardarGenero(generoE);
     }
+    @DeleteMapping(path = "/{id}")
+    public String eliminarPorId(@PathVariable("id")Long id){
+    boolean ok= this.generoService.eliminarGenero(id);
+    if (ok){
+        return "Se elimino el genero con el id "+ id;
+    }else {
+        return "No se pudo eliminar el genero con el id " +id;
+    }
 
+    }
 
 }

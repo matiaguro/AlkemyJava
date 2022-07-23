@@ -27,6 +27,12 @@ public class PersonajeService   {
         return personajeRepository.save(personajeE);
     }
 
+    public boolean eliminarGenero (Long id){
+        try{
+            personajeRepository.deleteById(id);
+            return true;
+        }catch (Exception err){
+            return false;
+        }
 
-
-}
+}}

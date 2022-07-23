@@ -28,7 +28,16 @@ public class PeliculaController {
         return peliculaService.guardarPelicula(peliculaE);
 
     }
+    @DeleteMapping(path = "/{id}")
+    public String eliminarPorId(@PathVariable("id")Long id){
+        boolean ok= this.peliculaService.eliminarGenero(id);
+        if (ok){
+            return "Se elimino el pelicula con el id "+ id;
+        }else {
+            return "No se pudo eliminar el pelicula con el id " +id;
+        }
 
+    }
 
 
 

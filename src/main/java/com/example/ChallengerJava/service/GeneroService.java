@@ -20,8 +20,17 @@ public class GeneroService {
         return generoRepository.findAll();
     }
     public GeneroEntity guardarGenero(GeneroEntity generoE){
-
         return generoRepository.save(generoE);
+    }
+
+    public boolean eliminarGenero (Long id){
+        try{
+            generoRepository.deleteById(id);
+            return true;
+        }catch (Exception err){
+            return false;
+        }
+
 
     }
 

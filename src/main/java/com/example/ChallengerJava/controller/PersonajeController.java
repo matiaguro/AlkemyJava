@@ -27,7 +27,16 @@ public class PersonajeController {
     public PersonajeEntity guardarPersonaje(@RequestBody PersonajeEntity personajeE){
         return this.personajeService.guardarPersonaje(personajeE);
     }
+    @DeleteMapping(path = "/{id}")
+    public String eliminarPorId(@PathVariable("id")Long id){
+        boolean ok= this.personajeService.eliminarGenero(id);
+        if (ok){
+            return "Se elimino el personaje con el id "+ id;
+        }else {
+            return "No se pudo eliminar el personaje con el id " +id;
+        }
 
+    }
 
 
 }

@@ -23,4 +23,11 @@ public class PeliculaService {
         return peliculaRepository.save(peliculaE);
     }
 
-}
+    public boolean eliminarGenero (Long id){
+        try{
+            peliculaRepository.deleteById(id);
+            return true;
+        }catch (Exception err){
+            return false;
+        }
+}}
