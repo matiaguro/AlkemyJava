@@ -13,7 +13,7 @@ public class PersonajeEntity {
     @Column(unique = true,nullable = false) //unico y no nulo
     private Long id;
     private String nombre;
-    private String edad;
+    private int edad;
     private String peso;
     private String historia;
 
