@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 
 @Getter
@@ -18,7 +21,8 @@ public class GeneroEntity {
     private Long id;
     private String nombre;
 
-
+    @OneToMany(mappedBy = "genero")
+    private List<PeliculaEntity> peliculas;
 
 
 
